@@ -1,31 +1,31 @@
 const scrollFunc = () => {
-  const links = document.querySelectorAll(".header-menu__item a");
+  const links = document.querySelectorAll('.header-menu__item a');
   const linkChaacteristics = document.querySelector(
-    ".card-details__link-characteristics"
+    '.card-details__link-characteristics'
   );
   const newArray = [...links, linkChaacteristics];
 
   seamless.polyfill();
 
   newArray.forEach((element) => {
-    element.addEventListener("click", (event) => {
+    element.addEventListener('click', (event) => {
       event.preventDefault();
 
-      const id = element.getAttribute("href").substring(1);
+      const id = element.getAttribute('href').substring(1);
       const section = document.getElementById(id);
 
       if (section) {
         seamless.elementScrollIntoView(section, {
-          behavior: "smooth",
-          block: "start",
+          behavior: 'smooth',
+          block: 'start',
         });
       } else {
         seamless.elementScrollIntoView(
-          document.querySelector("#characteristics"),
+          document.querySelector('#characteristics'),
           {
-            behavior: "smooth",
-            block: "center",
-            inline: "center",
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'center',
           }
         );
       }
